@@ -1,18 +1,30 @@
 package com.daru.springrest.controller;
 
-import com.daru.springrest.response.ResponseJson;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.daru.springrest.response.Computer;
+import com.daru.springrest.response.Food;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
 
-    @GetMapping("/employees")
-    public ResponseJson getMapping(){
-
-        ResponseJson newResponse = new ResponseJson("Pizza", 10);
-
-        return newResponse;
+    @GetMapping("/food/pizza")
+    public Food getPizza(){
+        Food pepperoniFood = new Food("pizza", 8);
+        return pepperoniFood;
     }
+
+    @GetMapping("/computer")
+    public Computer getComputer(){
+        Computer computerTwo = new Computer("asus", "3080", 32);
+        return computerTwo;
+    }
+
+    @PostMapping("/employees")
+    Food getGuinness(@RequestBody Food order) {
+        Food guiness = new Food("none", 10);
+        return guiness;
+    }
+
+    // http://localhost:8080/swagger-ui.html
 
 }
