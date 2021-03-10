@@ -26,5 +26,7 @@ public class Controller {
     }
 
     // http://localhost:8080/swagger-ui.html
+    // swagger json
+    // http://localhost:8080/v2/api-docs
 
 }
